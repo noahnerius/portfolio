@@ -1,0 +1,170 @@
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        // Cream & Brown palette (kept for reference/fallback)
+        cream: {
+          50: '#fefcf8',
+          100: '#fdf8ef',
+          200: '#faf0d9',
+          300: '#f6e5b8',
+          400: '#f1d68a',
+          500: '#ebc45c',
+          600: '#e0a93d',
+          700: '#c4872e',
+          800: '#9f6b28',
+          900: '#815724',
+          950: '#462e10',
+        },
+        brown: {
+          50: '#fdf8f3',
+          100: '#faf0e6',
+          200: '#f3dccb',
+          300: '#e8bc9d',
+          400: '#db9565',
+          500: '#d07640',
+          600: '#c15e2f',
+          700: '#9d4729',
+          800: '#803a27',
+          900: '#6a3324',
+          950: '#381811',
+        },
+        // Semantic colors using CSS variables (RGB format for opacity modifiers)
+        background: 'rgb(var(--color-background))',
+        surface: 'rgb(var(--color-surface))',
+        'surface-elevated': 'rgb(var(--color-surface-elevated))',
+        border: 'rgb(var(--color-border))',
+        'border-strong': 'rgb(var(--color-border-strong))',
+        text: 'rgb(var(--color-text))',
+        'text-muted': 'rgb(var(--color-text-muted))',
+        'text-subtle': 'rgb(var(--color-text-subtle))',
+        primary: 'rgb(var(--color-primary))',
+        'primary-hover': 'rgb(var(--color-primary-hover))',
+        'primary-focus': 'rgb(var(--color-primary-focus))',
+        accent: 'rgb(var(--color-accent))',
+        'accent-hover': 'rgb(var(--color-accent-hover))',
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        display: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        'display-xl': ['clamp(2.5rem, 5vw + 1rem, 4.5rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'display-lg': ['clamp(2rem, 4vw + 0.5rem, 3.5rem)', { lineHeight: '1.15', letterSpacing: '-0.01em' }],
+        'display-md': ['clamp(1.5rem, 3vw + 0.25rem, 2.5rem)', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        'heading-lg': ['1.875rem', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
+        'heading-md': ['1.5rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
+        'heading-sm': ['1.25rem', { lineHeight: '1.35' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.6' }],
+        'body': ['1rem', { lineHeight: '1.6' }],
+        'body-sm': ['0.875rem', { lineHeight: '1.5' }],
+        'caption': ['0.75rem', { lineHeight: '1.5' }],
+      },
+      fontWeight: {
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+      },
+      lineHeight: {
+        tight: '1.1',
+        snug: '1.35',
+        normal: '1.5',
+        relaxed: '1.6',
+        loose: '1.8',
+      },
+      letterSpacing: {
+        tighter: '-0.02em',
+        tight: '-0.01em',
+        normal: '0',
+        wide: '0.01em',
+        wider: '0.02em',
+        widest: '0.05em',
+      },
+      spacing: {
+        'space-1': '0.25rem',
+        'space-2': '0.5rem',
+        'space-3': '0.75rem',
+        'space-4': '1rem',
+        'space-5': '1.25rem',
+        'space-6': '1.5rem',
+        'space-8': '2rem',
+        'space-10': '2.5rem',
+        'space-12': '3rem',
+        'space-16': '4rem',
+        'space-20': '5rem',
+        'space-24': '6rem',
+        'space-32': '8rem',
+      },
+      borderRadius: {
+        'radius-sm': '0.25rem',
+        'radius-md': '0.5rem',
+        'radius-lg': '0.75rem',
+        'radius-xl': '1rem',
+        'radius-2xl': '1.5rem',
+        'radius-full': '9999px',
+      },
+      boxShadow: {
+        'elevation-1': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+        'elevation-2': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+        'elevation-3': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+        'elevation-4': '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+        'shadow-inner': 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+      },
+      transitionDuration: {
+        'fast': '150ms',
+        'normal': '250ms',
+        'slow': '350ms',
+      },
+      transitionTimingFunction: {
+        'ease-out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'ease-spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-out forwards',
+        'slide-up': 'slideUp 0.5s ease-out forwards',
+        'slide-down': 'slideDown 0.3s ease-out forwards',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideDown: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      // Z-index scale
+      zIndex: {
+        'dropdown': '100',
+        'sticky': '200',
+        'fixed': '300',
+        'modal-backdrop': '400',
+        'modal': '500',
+        'popover': '600',
+        'tooltip': '700',
+        'toast': '800',
+      },
+      // Screen reader only utility
+      screenReader: {
+        'only': 'position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;',
+      },
+    },
+  },
+  plugins: [],
+}
+
+export default config
